@@ -1,0 +1,28 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+}
+
+h2,
+h3 {
+  margin-right: 2rem;
+}
+
+label {
+  font-weight: bold;
+  display: flex;
+  margin-bottom: 5px;
+}
+
+input {
+  display: block;
+  width: 400px;
+  padding: 6px 12px;
+  font-size: 14px;
+  color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
