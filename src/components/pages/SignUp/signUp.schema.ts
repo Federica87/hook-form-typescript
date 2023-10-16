@@ -1,28 +1,22 @@
-export type Prioperties = {
-  value: boolean;
+export type Prioperties<Type> = {
+  value: Type;
   message: string;
 };
 
 export type SignUpSchema = {
   firstName: {
-    required: Prioperties;
+    required: Prioperties<boolean>;
   };
   lastName: {
-    required: Prioperties;
+    required: Prioperties<boolean>;
   };
   email: {
-    required: Prioperties;
-    pattern: {
-      value: RegExp;
-      message: string;
-    };
+    required: Prioperties<boolean>;
+    pattern: Prioperties<RegExp>;
   };
   password: {
-    required: Prioperties;
-    minLength: {
-      value: number;
-      message: string;
-    };
+    required: Prioperties<boolean>;
+    minLength: Prioperties<number>;
   };
 };
 
