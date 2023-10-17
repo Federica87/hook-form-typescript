@@ -1,4 +1,4 @@
-import { InputForm } from '../../InputForm';
+import { InputForm } from '../../components';
 import { useSignIn } from './signIn.hook';
 
 export const SignIn = () => {

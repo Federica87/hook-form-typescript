@@ -1,8 +1,7 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-import { SignIn } from './components/pages/SignIn';
-import { SignUp } from './components/pages/SignUp';
 import { Layout } from './components/Layout/Layout';
+import { SignIn, SignUp } from './pages';
 
 function App() {
   return (

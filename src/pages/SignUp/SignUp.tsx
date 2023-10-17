@@ -1,4 +1,4 @@
-import { InputForm } from '../../InputForm';
+import { InputForm } from '../../components';
 import { useSignUp } from './signUp.hook';
 import { signUpSchema } from './signUp.schema';
 
