@@ -1,14 +1,11 @@
-import { forwardRef, Ref } from 'react';
-
-export type InputFormProps = {
-  label: string;
-  type: string;
-  id: string;
-  error?: string | undefined;
-};
+import { ForwardedRef, forwardRef } from 'react';
+import { InputFormProps } from '../../models';
 
 export const InputForm = forwardRef(
-  ({ label, error, ...props }: InputFormProps, ref: Ref<HTMLInputElement>) => {
+  (
+    { label, error, ...props }: InputFormProps,
+    ref: ForwardedRef<HTMLInputElement>
+  ) => {
     return (
       <div>
         <label>{label}</label>

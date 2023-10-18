@@ -1,13 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { useState, useEffect } from 'react';
-
-export type FormValues = {
-  firstName: string;
-  lastName: string;
-  email: string;
-  password: string;
-  repeatedPassword: string;
-};
+import { FormValues } from '../../models';
 
 export const useSignUp = () => {
   const form = useForm<FormValues>({ mode: 'onTouched' });
@@ -31,7 +24,9 @@ export const useSignUp = () => {
   }, [isSubmitSuccessful]);
 
   function onSubmit(data: FormValues) {
-    setUsers([...users, data]);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { repeatedPassword, ...rest } = data;
+    setUsers([...users, rest]);
   }
 
   function validateEmail(value: string) {
@@ -41,7 +36,7 @@ export const useSignUp = () => {
     return usedEmail && 'Questa email è già assocciata ad un account';
   }
 
-  function validatePassword(value: string) {
+  function validatePassword(value: string | undefined) {
     return value === watch('password') || 'Le password non coincidono';
   }
 

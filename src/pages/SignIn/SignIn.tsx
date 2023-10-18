@@ -1,5 +1,6 @@
 import { InputForm } from '../../components';
 import { useSignIn } from './signIn.hook';
+import { signInSchema } from './signIn.schema';
 
 export const SignIn = () => {
   const {
@@ -11,6 +12,7 @@ export const SignIn = () => {
     setValidateUser,
     reset,
     deleteAccount,
+    errors,
   } = useSignIn();
 
   return (
@@ -39,7 +41,8 @@ export const SignIn = () => {
             label={'Email'}
             type="email"
             id="email"
-            {...register('email')}
+            {...register('email', signInSchema.email)}
+            error={errors.email?.message}
           />
           <InputForm
             label={'Password'}

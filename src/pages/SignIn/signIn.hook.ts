@@ -1,15 +1,11 @@
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
-import { FormValues } from '../SignUp/signUp.hook';
-
-export type SignInFormValues = {
-  email: string;
-  password: string;
-};
+import { FormValues, SignInFormValues } from '../../models';
 
 export const useSignIn = () => {
-  const form = useForm<SignInFormValues>();
-  const { register, handleSubmit, reset } = form;
+  const form = useForm<SignInFormValues>({ mode: 'onTouched' });
+  const { register, handleSubmit, reset, formState } = form;
+  const { errors } = formState;
 
   const [validateUser, setValidateUser] = useState<FormValues | undefined>();
   const [error, setError] = useState<string>('');
@@ -47,5 +43,6 @@ export const useSignIn = () => {
     setValidateUser,
     reset,
     deleteAccount,
+    errors,
   };
 };

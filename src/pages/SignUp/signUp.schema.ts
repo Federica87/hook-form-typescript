@@ -1,24 +1,4 @@
-export type Prioperties<Type> = {
-  value: Type;
-  message: string;
-};
-
-export type SignUpSchema = {
-  firstName: {
-    required: Prioperties<boolean>;
-  };
-  lastName: {
-    required: Prioperties<boolean>;
-  };
-  email: {
-    required: Prioperties<boolean>;
-    pattern: Prioperties<RegExp>;
-  };
-  password: {
-    required: Prioperties<boolean>;
-    minLength: Prioperties<number>;
-  };
-};
+import { SignUpSchema } from '../../models';
 
 export const signUpSchema: SignUpSchema = {
   firstName: {
