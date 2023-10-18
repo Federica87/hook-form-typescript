@@ -23,6 +23,10 @@ export const useSignIn = () => {
     reset();
   }
 
+  function handleChange() {
+    setError('');
+  }
+
   function onSubmit(data: SignInFormValues) {
     const local = JSON.parse(localStorage.getItem('users')!);
     const user = local.find((user: FormValues) => {
@@ -44,5 +48,6 @@ export const useSignIn = () => {
     reset,
     deleteAccount,
     errors,
+    handleChange,
   };
 };

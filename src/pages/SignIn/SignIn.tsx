@@ -8,6 +8,7 @@ export const SignIn = () => {
     handleSubmit,
     onSubmit,
     validateUser,
+    handleChange,
     error,
     setValidateUser,
     reset,
@@ -48,7 +49,7 @@ export const SignIn = () => {
             label={'Password'}
             type="password"
             id="password"
-            {...register('password')}
+            {...register('password', { onChange: handleChange })}
             error={error}
           />
           <button>ACCEDI</button>
