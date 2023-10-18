@@ -1,5 +1,13 @@
 import { Properties } from '.';
 
+export type FormValues = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+  repeatedPassword?: string;
+};
+
 export type SignUpSchema = {
   firstName: {
     required: Properties<boolean>;
